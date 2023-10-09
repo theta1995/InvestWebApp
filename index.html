@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td><strong>Ticker</strong></td>
+                    <td><strong>Company Name</strong></td>
+                    <td><strong>Invested Amount</strong></td>
+                    <td><strong>Allocation</strong></td>
+                    <td><strong>Action</strong></td>
+                </tr>
+            </thead>
+            <tbody id="companyTableBody">
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text">Ticker Symbol:</span>
+                            <input type="text" placeholder="Ex. AAPL" id="tickerInput" class="form-control"></td>
+                        </div>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text">Company Name:</span>
+                            <input type="text" placeholder="Ex. Apple" id="nameInput" class="form-control"></td>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" id="amountInput" min="0" aria-label="Amount you've invested" style="min-width: 50px;">
+                        </div>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" id="insertNewBtn">Add</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container-fluid" style="height:40vh; width:80vw; display: flex; justify-content: center;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>
