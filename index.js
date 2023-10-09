@@ -27,14 +27,15 @@ $("#insertNewBtn").on('click', function () {
     tickers.push(ticker);
     amounts.push(Number.parseFloat(amount));
     const allocation = getAllocations();
+    const yahooLink = `https://finance.yahoo.com/quote/${ticker}`
 
     var newRow = $(`<tr></tr>`).append(
-      $("<td></td>").text(ticker),
+      $("<td></td>").append($(`<a target="_blank" href="${yahooLink}">${ticker}</a>`)),
       $("<td></td>").text(name),
       $(`<td class="amountColumn"></td>`).text(convertToCurrency(amount)),
       $(`<td class="allocationColumn" data-ticker="${ticker}"></td>`),
       $(`<td></td>`).append(
-        $(`<button onclick="removeData(this)" data-ticker="${ticker}"><i class="bi bi-trash"></i></button>`)
+        $(`<button onclick="removeData(this)" data-ticker="${ticker}" title="Remove Investment."><i class="bi bi-trash"></i></button>`)
           .addClass("btn"))
     );
 
