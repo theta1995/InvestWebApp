@@ -33,7 +33,7 @@ $("#insertNewBtn").on('click', function () {
       $("<td></td>").append($(`<a target="_blank" href="${yahooLink}">${ticker}</a>`)),
       $("<td></td>").text(name),
       $(`<td class="amountColumn"></td>`).text(convertToCurrency(amount)),
-      $(`<td class="allocationColumn" data-ticker="${ticker}"></td>`),
+      $(`<td class="allocationColumn" data-ticker="${ticker}" style="max-width: 30px"></td>`),
       $(`<td></td>`).append(
         $(`<button onclick="removeData(this)" data-ticker="${ticker}" title="Remove Investment."><i class="bi bi-trash"></i></button>`)
           .addClass("btn"))
@@ -105,7 +105,7 @@ function getAllocations(){
   }
 
   tickers.forEach(ticker => {
-    allocations[ticker] = (amounts[i] / sum * 100).toFixed(3);
+    allocations[ticker] = (amounts[i] / sum * 100).toFixed(2);
     i++;
   });
 
